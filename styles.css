@@ -1,0 +1,370 @@
+/* 
+
+EXPERIMENT 1 | "RESPONSIVE"
+
+~
+
+Using media queries, and thinking mobile-first, set up the responsive layout
+for desktop and mobile size screens as shown in the Figma mockup (link below):
+
+https://www.figma.com/file/I48fdCsuxmczvIOxWUojfr/Responsive-example?node-id=1%3A2
+
+~
+
+CSS Grid can be a huge help here (it's great for almost all layout stuff for web)
+and there are a few links to help you get started on the class resources page:
+
+https://ianmcdonald.ca/resources/
+
+~
+
+You can also use media queries to automatically switch between the light and dark
+modes as seen in the mockup too! Media queries can work to change or alter the
+websites styles depending on some condition of your choosing (i.e. when the screen
+is at least this wide, apply these styles; or if the site visitor has their device 
+set to dark mode, apply these styles! Some media query info is here but we will go 
+through this together in class:
+
+https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+
+
+~ 
+
+Have fun, break things, try new things ... this is an experiment after all :)
+
+
+Ok, now for the styles!
+
+*/
+
+
+
+
+
+/* BASE STYLES
+============================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  background: #E9D2BE;
+  color: #BE7359;
+  line-height: 1.25;
+}
+
+section {
+  min-height: 75vh;
+  padding: 0.5em;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.container1 {
+  max-width: 40em;
+}
+
+.container2 {
+  max-width: 50em;
+}
+
+.logo {
+  margin-top: -55em;
+  position: relative;
+}
+
+
+
+
+
+/* TYPOGRAPHY
+============================================================================== */
+
+h1 {
+  font-size: 4em;
+  line-height: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-family: 'poppins',sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #E0B896;
+}
+
+h2 {
+  font-size: 4em;
+  line-height: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-family: 'poppins',sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #BE7359;
+}
+
+h3 {
+  font-size: 17pt;
+  line-height: 75%;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-family: 'poppins',sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #F4EAE1;
+}
+
+h4 {
+  font-size: 3em;
+  line-height: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-family: 'poppins',sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #E0B896;
+}
+
+p {
+  font-size: 19pt;
+  text-align: center;
+  font-family: 'poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.rounded {
+  border-top: 3px solid #BE7359;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  border-bottom: none;
+}
+
+
+
+
+/* CARDS
+============================================================================== */
+
+.cards {
+  display: grid;
+  margin-top: 2em;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 3em;
+  margin-bottom: 1.5em;
+}
+
+.card {
+  background-color: #BE7359;
+  color: #F4EAE1;
+  text-decoration: none;
+  padding: 1em;
+  display: block;
+  margin-bottom: 1em;
+  transition: all 0.5s;
+  overflow: hidden;
+  max-width: 20em;
+}
+
+.card:hover {
+  background-color: #D4A38C;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.5em 0;
+  transition: transform 0.75s;
+  transform-origin: bottom;
+}
+
+.card:hover img {
+  transform: scale(1.2);
+}
+
+.card p {
+  font-weight: normal;
+}
+
+
+
+
+
+
+/* BUTTONS
+============================================================================== */
+
+.button {
+  display: inline-block;
+  color: #E9D2BE;
+  background-color: #D4A38C;
+  border: 2px solid #E9D2BE;
+  padding: 0.5em 1em;
+  transition: all 0.5s;
+  text-decoration: none;
+  outline: none;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: 'poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.button:hover {
+  color: #BE7359;
+  background-color: #E9D2BE;
+}
+
+.invert {
+  color: var(--light);
+  background-color: var(--accent);
+  border: 2px solid var(--light);
+}
+
+.invert:hover {
+  color: var(--accent);
+  background-color: var(--light);
+}
+
+
+
+
+
+/* HEADER
+============================================================================== */
+
+header {
+  display: grid;
+  justify-items: center;
+  align-content: space-between;
+}
+
+.heading {
+  max-width: 100%;
+}
+
+
+
+
+/* CONTACT FORM
+============================================================================== */
+
+form {
+  width: 100%;
+  margin-left: 50vw
+}
+
+input, textarea {
+  display: block;
+  color: #E9D2BE;
+  background-color: #D4A38C;
+  padding: 0.5em;
+  border: 2px solid #E9D2BE;
+  transition: all 0.5s;
+  text-decoration: none;
+  outline: none;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  margin-bottom: 1em;
+  width: 50%;
+  font-family: 'poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+input:focus, textarea:focus {
+  background-color: #E9D2BE;
+  color: #BE7359;
+}
+
+label {
+  font-size: 0.75em;
+  font-family: 'poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: block;
+}
+
+::placeholder {
+  color: #E9D2BE;
+  opacity: 100%;
+  font-family: 'poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.newsletter {
+  background-color: #BE7359;
+  color: #E9D2BE;
+}
+
+
+
+/* WHO WE ARE
+============================================================================== */
+
+.who-we-are {
+  background-color: #BE7359;
+  margin-bottom: 20vh;
+  color: #E9D2BE;
+}
+
+
+/* MEDIA QUERIES
+============================================================================== */
+
+@media (max-width: 800px) {
+ 
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  h4 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  p {
+    font-size: 14pt;
+  }
+
+}
+  @media (max-width: 900px) {
+  .cards {
+  display: grid;
+  margin-top: 2em;
+  grid-template-columns: 1fr;
+  }
+
+  .rounded {
+    max-width: 400px;
+  }
+
+  
+}
+
+@media (max-width: 500px) {
+  .logo {
+    margin-top: -50em;
+    max-width: 300px;
+  }
+}
